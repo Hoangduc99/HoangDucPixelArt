@@ -5,15 +5,59 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Pixel Art Portfolio</title>
     <style>
-        body { font-family: Arial, sans-serif; text-align: center; background-color: #222; color: white; }
-        img { width: 300px; margin: 10px; border-radius: 10px; }
+        body { 
+            font-family: 'Poppins', sans-serif; 
+            text-align: center; 
+            background-color: #1a1a1a; 
+            color: white; 
+            padding: 20px;
+        }
+        h1 {
+            font-size: 2.5rem;
+            color: #f39c12;
+            animation: glitch 0.2s infinite;
+        }
+        img { 
+            width: 250px; 
+            margin: 15px; 
+            border-radius: 8px; 
+            transition: transform 0.3s ease-in-out;
+            animation: pixelate 3s infinite alternate;
+        }
+        img:hover {
+            transform: scale(1.1);
+        }
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+        }
+        
+        @keyframes glitch {
+            0% { transform: translate(0); }
+            20% { transform: translate(-2px, 2px); }
+            40% { transform: translate(2px, -2px); }
+            60% { transform: translate(-2px, -2px); }
+            80% { transform: translate(2px, 2px); }
+            100% { transform: translate(0); }
+        }
+        
+        @keyframes pixelate {
+            0% { filter: blur(0px) contrast(100%) saturate(100%); }
+            50% { filter: blur(2px) contrast(200%) saturate(150%); }
+            100% { filter: blur(0px) contrast(100%) saturate(100%); }
+        }
     </style>
 </head>
 <body>
     <h1>My Pixel Art Portfolio</h1>
     <p>Welcome to my collection of pixel artworks!</p>
-    <img src="pixelart1.png" alt="Pixel Art 1">
-    <img src="pixelart2.png" alt="Pixel Art 2">
-    <img src="pixelart3.png" alt="Pixel Art 3">
+    <div class="gallery">
+        <img src="pixelart1.png" alt="Pixel Art 1">
+        <img src="pixelart2.png" alt="Pixel Art 2">
+        <img src="pixelart3.png" alt="Pixel Art 3">
+    </div>
 </body>
 </html>
+
